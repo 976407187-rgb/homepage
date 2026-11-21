@@ -165,6 +165,12 @@
     .hero-meta{gap:14px;flex-direction:column;font-size:13px}
   }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+  /* 作品截图 */
+  .shots{display:grid;grid-template-columns:1fr;gap:34px;margin-top:44px;max-width:920px}
+  .shots figure{margin:0}
+  .shots img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px;background:#0f0f11}
+  .shots figcaption{margin-top:11px;color:var(--dim);font-size:13.5px;line-height:1.62}
+  @media(max-width:760px){.shots{gap:26px}}
 </style>
 </head>
 <body>
@@ -288,6 +294,17 @@
           <p>金句库按日累积、自动生成台账；189 GB 桌面到 NAS 的迁移，跑 4 路并行 + 逐目录字节比对 + 抽样 md5，验完才删源。</p>
         </div>
       </div>
+    </div>
+
+    <div class="shots">
+      <figure>
+        <img src="images/prototype-transcript.jpg" alt="对话记忆原型：一段会议录音被转写，按说话人分色，逐句带时间" loading="lazy">
+        <figcaption>录音进来，本地转写并按人分色。说话人名字是当场点出来的，不是预先建的档案。</figcaption>
+      </figure>
+      <figure>
+        <img src="images/prototype-people.jpg" alt="人物档案：已绑定声音的人和待认领的新声音" loading="lazy">
+        <figcaption>见过的人自动归位；没听过的新声音先留一个“待认领”，点一下命名才进库。</figcaption>
+      </figure>
     </div>
   </div>
 </section>
