@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>陈池恩 · AI 应用验收测试</title>
+<meta name="description" content="帮制造企业判断买回来的 AI 到底能不能用：验收测试、落地陪跑、内训与规范。宁波。">
+<meta name="theme-color" content="#0a0a0b">
+<style>
+  :root{
+    --bg:#0a0a0b;
+    --ink:#ece9e3;
+    --dim:#93908a;
+    --line:rgba(255,255,255,.11);
+    --accent:#d0a84c;
+    --accent-dim:rgba(208,168,76,.12);
+    --serif:"Songti SC","Source Han Serif SC","Noto Serif SC",Songti,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:var(--sans);font-size:16.5px;line-height:1.75;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(900px 500px at 78% -8%, rgba(208,168,76,.10), transparent 60%),
+      radial-gradient(700px 420px at 8% 12%, rgba(120,170,190,.07), transparent 62%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:0 26px}
+  a{color:inherit}
+
+  /* ---------- hero ---------- */
+  .hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:96px 0 72px}
+  .eyebrow{
+    font-size:13px;letter-spacing:.22em;color:var(--dim);
+    text-transform:uppercase;margin:0 0 30px
+  }
+  .eyebrow b{color:var(--accent);font-weight:600}
+  h1{
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(38px,7.2vw,72px);line-height:1.22;letter-spacing:.01em;
+    margin:0 0 30px;text-wrap:balance;
+  }
+  h1 em{font-style:normal;color:var(--accent)}
+  .lede{font-size:clamp(16px,2.1vw,19px);color:#cfcbc3;max-width:36em;margin:0 0 40px}
+  .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{
+    display:inline-block;padding:13px 25px;border-radius:2px;
+    text-decoration:none;font-size:15px;letter-spacing:.04em;
+    border:1px solid var(--line);transition:border-color .25s,background .25s,transform .25s
+  }
+  .btn:hover{border-color:var(--accent);transform:translateY(-1px)}
+  .btn.solid{background:var(--accent);color:#141210;border-color:var(--accent);font-weight:600}
+  .btn.solid:hover{background:#ddb75f}
+  .hero-meta{
+    margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
+    display:flex;gap:26px;flex-wrap:wrap;font-size:13.5px;color:var(--dim)
+  }
+  .hero-meta span::before{content:"·";margin-right:9px;color:var(--accent)}
+  .hero-meta span:first-child::before{content:none;margin:0}
+
+  /* ---------- sections ---------- */
+  section{padding:88px 0;border-top:1px solid var(--line)}
+  .num{
+    font-family:var(--serif);font-size:13px;color:var(--accent);
+    letter-spacing:.2em;margin:0 0 18px;display:block
+  }
+  h2{
+    font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.6vw,34px);
+    line-height:1.35;margin:0 0 16px;text-wrap:balance
+  }
+  .sub{color:var(--dim);margin:0 0 44px;max-width:38em;font-size:15.5px}
+
+  /* ---------- cards ---------- */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line)}
+  .card{background:var(--bg);padding:30px 26px 32px}
+  .card h3{font-size:18px;margin:0 0 8px;font-weight:600;letter-spacing:.01em}
+  .card .tag{
+    display:inline-block;font-size:12px;color:var(--accent);
+    background:var(--accent-dim);padding:2px 9px;border-radius:2px;margin-bottom:16px;letter-spacing:.06em
+  }
+  .card p{margin:0;color:#b9b5ad;font-size:14.5px;line-height:1.8}
+
+  /* ---------- table ---------- */
+  .tbl{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:8px}
+  .tbl th,.tbl td{padding:15px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  .tbl th{
+    font-weight:600;color:var(--dim);font-size:12.5px;letter-spacing:.12em;
+    border-bottom-color:rgba(255,255,255,.16)
+  }
+  .tbl td:first-child{color:var(--ink)}
+  .tbl td:last-child{color:#a9a59d}
+  .tbl tr:hover td{background:rgba(255,255,255,.017)}
+
+  /* ---------- contrast pair ---------- */
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);margin-top:34px}
+  .pair>div{background:var(--bg);padding:24px 24px 26px}
+  .pair .lab{font-size:12px;letter-spacing:.14em;color:var(--dim);margin:0 0 12px}
+  .pair .bad .txt{color:#8d8a84;text-decoration:line-through;text-decoration-color:rgba(255,120,120,.45)}
+  .pair .good .txt{color:var(--ink)}
+  .pair .good .lab{color:var(--accent)}
+
+  /* ---------- works ---------- */
+  .works{display:grid;gap:34px}
+  .work{display:grid;grid-template-columns:56px 1fr;gap:22px;align-items:start}
+  .work .k{
+    font-family:var(--serif);font-size:26px;color:rgba(208,168,76,.5);
+    line-height:1.1;padding-top:2px
+  }
+  .work h3{margin:0 0 6px;font-size:17px;font-weight:600}
+  .work p{margin:0;color:#b3afa7;font-size:14.5px}
+
+  /* ---------- don't ---------- */
+  .dont{list-style:none;padding:0;margin:0;display:grid;gap:0}
+  .dont li{
+    padding:19px 0 19px 32px;border-bottom:1px solid var(--line);
+    position:relative;font-size:15.5px;color:#cbc7bf
+  }
+  .dont li::before{
+    content:"×";position:absolute;left:4px;top:17px;
+    color:rgba(208,168,76,.7);font-size:17px
+  }
+  .dont li b{color:var(--ink);font-weight:600}
+
+  /* ---------- contact ---------- */
+  .contact{padding:96px 0 110px;border-top:1px solid var(--line);text-align:left}
+  .contact h2{margin-bottom:20px}
+  .contact .big{
+    font-family:var(--serif);font-size:clamp(22px,3.4vw,30px);
+    line-height:1.6;color:#d9d5cd;max-width:30em;margin:0 0 44px
+  }
+  .contact .big em{font-style:normal;color:var(--accent)}
+  .ways{display:flex;gap:40px;flex-wrap:wrap;font-size:15px}
+  .ways div{color:var(--dim)}
+  .ways b{display:block;color:var(--ink);font-weight:500;margin-top:5px;font-size:16px}
+  .ph{
+    color:var(--dim);border-bottom:1px dashed rgba(255,255,255,.22);
+    padding-bottom:1px;cursor:default
+  }
+  footer{
+    border-top:1px solid var(--line);padding:26px 0 44px;
+    font-size:12.5px;color:#6f6c66;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap
+  }
+
+  @media (max-width:640px){
+    body{font-size:16px}
+    .wrap{padding:0 20px}
+    .hero{min-height:auto;padding:72px 0 56px}
+    section{padding:64px 0}
+    .pair{grid-template-columns:1fr}
+    .work{grid-template-columns:1fr;gap:8px}
+    .work .k{font-size:22px}
+    .tbl{font-size:13.5px}
+    .tbl th,.tbl td{padding:12px 8px}
+    .tbl thead{display:none}
+    .tbl tr{display:block;border-bottom:1px solid var(--line);padding:18px 0}
+    .tbl tr:last-child{border-bottom:0}
+    .tbl td{display:block;border:0;padding:3px 0}
+    .tbl td::before{display:block;content:attr(data-th);font-size:11.5px;letter-spacing:.14em;color:var(--dim);margin-bottom:3px}
+    .tbl td:first-child::before{color:var(--accent);opacity:.8}
+    .hero-meta{gap:14px;flex-direction:column;font-size:13px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">宁波 · <b>独立顾问</b> · 2026</p>
+    <h1>AI 买回来之后，<br>最难的是<em>能不能用</em>。</h1>
+    <p class="lede">
+      我做企业 AI 应用的<b>验收测试</b>与<b>落地陪跑</b>。在客户为 AI 付款或上线之前，
+      用可复现的方法判定它有没有达到约定的效果，给出能不能上的结论——
+      以及要上的话，先补哪三件事。
+    </p>
+    <div class="cta">
+      <a class="btn solid" href="#what">看我能提供什么</a>
+      <a class="btn" href="#contact">先聊 40 分钟</a>
+    </div>
+    <div class="hero-meta">
+      <span>汽车电子软件测试出身</span>
+      <span>现做 AI 应用验收</span>
+      <span>宁波及周边可现场，其余远程</span>
+    </div>
+  </div>
+</header>
+
+<section id="what">
+  <div class="wrap">
+    <span class="num">01 / 我在做什么</span>
+    <h2>三件事，从轻到重</h2>
+    <p class="sub">从“只差一个签字”的地方切入，再往流程里走。</p>
+    <div class="cards">
+      <div class="card">
+        <span class="tag">2–3 周</span>
+        <h3>AI 应用验收测试</h3>
+        <p>把业务目标翻成 20–50 条可判定的用例，跑评测集、定权重、分根因，出一份能签字的报告。适合已经买了 AI 产品、卡在验收付款那一步的企业。</p>
+      </div>
+      <div class="card">
+        <span class="tag">按月 · 3–6 个月</span>
+        <h3>落地陪跑</h3>
+        <p>场景选型 → PoC → 验收 → 上线 SOP。管的是“这件事到底该不该用 AI、用到哪一步为止”，而不是替你选一个模型。</p>
+      </div>
+      <div class="card">
+        <span class="tag">半天起</span>
+        <h3>内训与规范</h3>
+        <p>半天工作坊 + 部门 AI 使用规范 + 一套能直接用的提示词库。先从“让员工会用、敢用、不闯祸”开始。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <span class="num">02 / 为什么是我</span>
+    <h2>我做的是同一件事，只是对象换了</h2>
+    <p class="sub">
+      汽车电子的那套功课——需求可追溯、用例设计、缺陷分级、供应商交付——平移到 AI 应用上，几乎一一对应。
+      测试这行干了这些年，核心不是找 bug，是<b>让签字的人敢签</b>。
+    </p>
+    <table class="tbl">
+      <thead><tr><th style="width:46%">过去做的</th><th>现在做的</th></tr></thead>
+      <tbody>
+        <tr><td data-th="过去做的">需求可追溯（V 模型、ASPICE）</td><td data-th="现在做的">每条验收标准都能追回一个业务 KPI，追不上的标为“不可验收项”写进限制条件</td></tr>
+        <tr><td data-th="过去做的">用例设计：边界值、等价类、异常路径</td><td data-th="现在做的">黄金集 + 对抗集：长尾表达、超长输入、多轮指代、提示词注入</td></tr>
+        <tr><td data-th="过去做的">缺陷分级与一票否决项</td><td data-th="现在做的">幻觉率、PII 泄露、数据出境、生成式服务备案——碰到任一条直接判不通过</td></tr>
+        <tr><td data-th="过去做的">供应商交付管理与争议处理</td><td data-th="现在做的">甲乙双方对“算不算交付”扯皮时，出具基于抽样与证据的评估意见</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <span class="num">03 / 我怎么判断</span>
+    <h2>把“要好用”逼成一句可判定的标准</h2>
+    <p class="sub">验收标准写不好，报告就是废纸。所以第一件事是把形容词逐条杀掉。</p>
+    <table class="tbl">
+      <thead><tr><th style="width:30%">层</th><th>回答什么</th><th>典型指标</th></tr></thead>
+      <tbody>
+        <tr><td data-th="层">业务结果层</td><td data-th="回答什么">这件事到底变好了没有</td><td data-th="典型指标">一次解决率、人工复核率、处理时长、单笔成本</td></tr>
+        <tr><td data-th="层">系统行为层</td><td data-th="回答什么">输出稳不稳、可不可信</td><td data-th="典型指标">准确率、幻觉率、拒答率、P95 时延</td></tr>
+        <tr><td data-th="层">合规底线层</td><td data-th="回答什么">会不会出事</td><td data-th="典型指标">数据不出域、内容标识、留痕可审计、备案齐备</td></tr>
+      </tbody>
+    </table>
+    <div class="pair">
+      <div class="bad">
+        <p class="lab">没人能判的说法</p>
+        <p class="txt">“回答要专业、准确。”</p>
+      </div>
+      <div class="good">
+        <p class="lab">能判的说法</p>
+        <p class="txt">“在 120 条黄金集上，由 3 名领域专家盲评，≥4/5 分的比例不低于 85%，且不得出现编造法规条款或金额——出现 1 条即判失败。”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <span class="num">04 / 我自己在用的东西</span>
+    <h2>我不是只写报告的人</h2>
+    <p class="sub">下面这几样都是我自己每天在用的，不是案例包装。</p>
+    <div class="works">
+      <div class="work">
+        <div class="k">01</div>
+        <div>
+          <h3>对话记忆原型</h3>
+          <p>一段 67 秒的双人对谈 → 本地转写 → 按音高分出两个人 → 出一份“同一句话，换种说法就不吵了”的台词本。全程离线，录音不出局域网。</p>
+        </div>
+      </div>
+      <div class="work">
+        <div class="k">02</div>
+        <div>
+          <h3>古籍抉择推演</h3>
+          <p>把当下的处境编码成“势位 / 关系 / 诱因 / 约束”，到《史记》《资治通鉴》里找同内核的历史抉择，拆出显性与隐性代价。只给代价结构，不给建议——查不到同内核的，就说查不到。</p>
+        </div>
+      </div>
+      <div class="work">
+        <div class="k">03</div>
+        <div>
+          <h3>自己的资料流水线</h3>
+          <p>金句库按日累积、自动生成台账；189 GB 桌面到 NAS 的迁移，跑 4 路并行 + 逐目录字节比对 + 抽样 md5，验完才删源。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dont">
+  <div class="wrap">
+    <span class="num">05 / 我不做什么</span>
+    <h2>先把边界说清楚，比先讲能力有用</h2>
+    <ul class="dont">
+      <li><b>不做模型训练与微调。</b>那是算法团队的事，我做判断，不做炼丹。</li>
+      <li><b>不做战略 PPT。</b>讲趋势的场合很多，我这边只出结论和证据。</li>
+      <li><b>不自称“第三方检测机构”，不出具检测报告。</b>没有 CMA/CNAS 资质，就不假装有——报告首页会写明“仅供委托方内部验收使用”。</li>
+      <li><b>不写“保证效果”。</b>只写“按约定的方法与样本给出结论”，以及“这个结论覆盖了什么、没覆盖什么”。</li>
+    </ul>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="num">06 / 联系</span>
+    <p class="big">
+      如果你手上正好有一个<b>买了 AI、但不敢上线</b>的项目——
+      可以先把情况发我，我们聊 <em>40 分钟</em>，不收费。聊完你觉得没用，就到此为止。
+    </p>
+    <div class="ways">
+      <div>微信<b><span class="ph">待填</span></b></div>
+      <div>邮箱<b><span class="ph">待填</span></b></div>
+      <div>常驻<b>宁波</b></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;width:100%">
+    <span>© 2026 陈池恩</span>
+    <span>本页无追踪、无第三方脚本 · 最后更新 2026-11-19</span>
+  </div>
+</footer>
+
+</body>
+</html>
