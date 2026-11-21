@@ -3,8 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>陈池恩 · AI 应用验收测试</title>
-<meta name="description" content="帮制造企业判断买回来的 AI 到底能不能用：验收测试、落地陪跑、内训与规范。宁波。">
+<title>AI 智能应用服务 · 验收测试与落地陪跑</title>
+<meta name="description" content="AI 智能应用服务：帮企业判断买回来的 AI 到底能不能用——验收测试、落地陪跑、内训与规范。宁波。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI 智能应用服务">
+<meta property="og:title" content="AI 智能应用服务 · 验收测试与落地陪跑">
+<meta property="og:description" content="AI 买回来之后，最难的是能不能用。用可复现的方法判定它达没达到约定效果，给出能不能上的结论。">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0a0a0b">
 <style>
   :root{
@@ -33,8 +38,13 @@
   .wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:0 26px}
   a{color:inherit}
 
-  /* ---------- hero ---------- */
-  .hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:96px 0 72px}
+  /* ---------- masthead ---------- */
+  .mast{display:flex;align-items:baseline;gap:14px;padding:26px 0 0;border-bottom:1px solid var(--line);padding-bottom:16px}
+  .mast .brand{font-size:15px;letter-spacing:.12em;color:var(--ink);font-weight:600}
+  .mast .brand-sub{font-size:12.5px;letter-spacing:.14em;color:var(--dim)}
+  .hero{padding-top:72px}
+
+  /* ---------- hero ---------- */  .hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:96px 0 72px}
   .eyebrow{
     font-size:13px;letter-spacing:.22em;color:var(--dim);
     text-transform:uppercase;margin:0 0 30px
@@ -175,6 +185,13 @@
 </head>
 <body>
 
+<div class="wrap">
+  <div class="mast">
+    <span class="brand">AI 智能应用服务</span>
+    <span class="brand-sub">验收测试 · 落地陪跑</span>
+  </div>
+</div>
+
 <header class="hero">
   <div class="wrap">
     <p class="eyebrow">宁波 · <b>独立顾问</b> · 2026</p>
@@ -298,11 +315,11 @@
 
     <div class="shots">
       <figure>
-        <img src="images/prototype-transcript.jpg" alt="对话记忆原型：一段会议录音被转写，按说话人分色，逐句带时间" loading="lazy">
+        <img src="images/prototype-transcript.jpg" alt="对话记忆原型：一段会议录音被转写，按说话人分色，逐句带时间" decoding="async">
         <figcaption>录音进来，本地转写并按人分色。说话人名字是当场点出来的，不是预先建的档案。</figcaption>
       </figure>
       <figure>
-        <img src="images/prototype-people.jpg" alt="人物档案：已绑定声音的人和待认领的新声音" loading="lazy">
+        <img src="images/prototype-people.jpg" alt="人物档案：已绑定声音的人和待认领的新声音" decoding="async">
         <figcaption>见过的人自动归位；没听过的新声音先留一个“待认领”，点一下命名才进库。</figcaption>
       </figure>
     </div>
