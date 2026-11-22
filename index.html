@@ -181,6 +181,30 @@
   .shots img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px;background:#0f0f11}
   .shots figcaption{margin-top:11px;color:var(--dim);font-size:13.5px;line-height:1.62}
   @media(max-width:760px){.shots{gap:26px}}
+
+  /* ---------- polish 2026-11-22 ---------- */
+  h1{line-height:1.16;letter-spacing:.004em}
+  .hero{min-height:76vh;padding:78px 0 64px}
+  .hero .wrap{width:100%}
+  .lede{max-width:35em;color:#d3cfc7}
+  .num{display:flex;align-items:center;gap:12px}
+  .num::before{content:"";width:24px;height:1px;background:var(--accent);opacity:.55;flex:0 0 auto}
+  .hero-meta{gap:10px 30px}
+  .hero-meta span{display:inline-flex;align-items:center}
+  .hero-meta span::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--accent);margin-right:10px;opacity:.85}
+  .mast .brand{display:inline-flex;align-items:center;gap:11px}
+  .mast .brand::before{content:"";width:7px;height:7px;background:var(--accent);transform:rotate(45deg);display:inline-block}
+  .card{transition:background .28s ease,transform .28s ease}
+  .card:hover{background:#0e0e10;transform:translateY(-2px)}
+  .tbl tbody tr{transition:background .2s ease}
+  .tbl tbody tr:hover{background:rgba(255,255,255,.028)}
+  .btn{transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease}
+  .btn:hover{transform:translateY(-1px)}
+  @media(max-width:640px){
+    .hero{padding-top:56px}
+    .hero-meta{gap:8px 18px;font-size:13px}
+    .mast{padding-top:20px}
+  }
 </style>
 </head>
 <body>
@@ -206,8 +230,8 @@
       <a class="btn" href="#contact">先聊 40 分钟</a>
     </div>
     <div class="hero-meta">
-      <span>汽车电子软件测试出身</span>
-      <span>现做 AI 应用验收</span>
+      <span>只做验收与落地，不做模型</span>
+      <span>结论可复现，证据可复核</span>
       <span>宁波及周边可现场，其余远程</span>
     </div>
   </div>
@@ -241,15 +265,15 @@
 <section id="why">
   <div class="wrap">
     <span class="num">02 / 为什么是我</span>
-    <h2>我做的是同一件事，只是对象换了</h2>
+    <h2>同一套验收逻辑，换了个对象</h2>
     <p class="sub">
-      汽车电子的那套功课——需求可追溯、用例设计、缺陷分级、供应商交付——平移到 AI 应用上，几乎一一对应。
-      测试这行干了这些年，核心不是找 bug，是<b>让签字的人敢签</b>。
+      需求可追溯、用例设计、缺陷分级、供应商交付——这套功课平移到 AI 应用上，几乎一一对应。
+      做验收这些年，核心从来不是找 bug，是<b>让签字的人敢签</b>。
     </p>
     <table class="tbl">
       <thead><tr><th style="width:46%">过去做的</th><th>现在做的</th></tr></thead>
       <tbody>
-        <tr><td data-th="过去做的">需求可追溯（V 模型、ASPICE）</td><td data-th="现在做的">每条验收标准都能追回一个业务 KPI，追不上的标为“不可验收项”写进限制条件</td></tr>
+        <tr><td data-th="过去做的">需求可追溯（需求 → 用例 → 证据，一条链）</td><td data-th="现在做的">每条验收标准都能追回一个业务 KPI，追不上的标为“不可验收项”写进限制条件</td></tr>
         <tr><td data-th="过去做的">用例设计：边界值、等价类、异常路径</td><td data-th="现在做的">黄金集 + 对抗集：长尾表达、超长输入、多轮指代、提示词注入</td></tr>
         <tr><td data-th="过去做的">缺陷分级与一票否决项</td><td data-th="现在做的">幻觉率、PII 泄露、数据出境、生成式服务备案——碰到任一条直接判不通过</td></tr>
         <tr><td data-th="过去做的">供应商交付管理与争议处理</td><td data-th="现在做的">甲乙双方对“算不算交付”扯皮时，出具基于抽样与证据的评估意见</td></tr>
